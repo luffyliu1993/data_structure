@@ -192,9 +192,12 @@ void destroy_list(sll *list)
       return;
     }
   node *temp = list->head;
-  for(;temp != NULL; temp = temp->next)
+  node *next = NULL;
+  for(;temp != NULL; temp = next)
     {
+      next = temp->next;
       free(temp);
     }
+  list->size = 0;
   free(list);
 }
