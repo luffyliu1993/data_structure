@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gcc-6 -w -g singly_linked_list.c main.c -c
-gcc-6 -w main.o singly_linked_list.o -o main
+gcc -w -g singly_linked_list.c main.c -c
+gcc -w main.o singly_linked_list.o -o main
 rm -rf *.o
-./main
+valgrind --tool=memcheck ./main
