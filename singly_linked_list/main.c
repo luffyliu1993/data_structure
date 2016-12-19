@@ -32,6 +32,7 @@ void print(node *head)
 void int_destroy(node *delete_node)
 {
   free(delete_node);
+  delete_node = NULL;
 }
 
 void int_print(node *head)
@@ -88,9 +89,10 @@ int main(void)
   add_front(int_list, 0);
   add_front(int_list,-1);
   int_list->print(int_list->head);
-  
+
   //destroy the lists
   destroy_list(list);
   destroy_list(int_list);
+  list = int_list = NULL;
   return 0;
 }

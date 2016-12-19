@@ -27,6 +27,7 @@ void int_print(node *head)
 void destroy(node *delete_node)
 {
   free(delete_node);
+  delete_node = NULL;
 }
 
 int main(void)
@@ -43,10 +44,6 @@ int main(void)
   printf("stack size: %d\n", stack_size(stack));
   stack->stack->print(stack->stack->head);
   destroy_stack(stack);
-  if(stack->size == 0)
-  {
-    printf("Stack is empty now\n");
-  }
-  printf("%d\n",size(stack->stack));
+  stack = NULL;
   return 0;
 }
